@@ -11,10 +11,19 @@ import UIKit
 class ViewController: UIViewController {
     
     var coinManager = CoinManager()
+    let inDateFormatter = ISO8601DateFormatter()
+    let outDateFormatter: DateFormatter = {
+           let df = DateFormatter()
+           df.dateFormat = "dd-MM-yyyy HH:mm:ss"
+           return df
+       }()
+    
     
     @IBOutlet weak var bitcoinLabel: UILabel!
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var currencyPicker: UIPickerView!
+    
+    @IBOutlet weak var timeOfQuotation: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +38,19 @@ class ViewController: UIViewController {
 // MARK: - CoinManagerDelegate
 extension ViewController: CoinManagerDelegate {
     
+    
     func didUpdateCoinPrice(_ coinManager: CoinManager, coinModel: CoinModel) {
         DispatchQueue.main.async {
             
             let rate = String(format: "%.2f", coinModel.rate)
-            
             self.bitcoinLabel.text = rate
             self.currencyLabel.text = coinModel.assetIDQuote
+            
+            let dateString = coinModel.time
+            print(coinModel.time)
+            let date = self.inDateFormatter.date(from: dateString)
+            let formattedString = self.outDateFormatter.string(from: date ?? Date())
+            self.timeOfQuotation.text = formattedString
         }
     }
     

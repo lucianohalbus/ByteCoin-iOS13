@@ -85,6 +85,13 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNR-FC-R1f">
+                                <rect key="frame" x="25" y="234" width="365" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CjI-yV-vnC"/>
                         <color key="backgroundColor" name="Background Color"/>
@@ -101,15 +108,16 @@
                         <outlet property="bitcoinLabel" destination="N2a-Ax-iRV" id="yey-hY-2xi"/>
                         <outlet property="currencyLabel" destination="MAn-y0-nXv" id="8Vm-if-JH0"/>
                         <outlet property="currencyPicker" destination="ct2-jk-pgH" id="oVG-BT-tH9"/>
+                        <outlet property="timeOfQuotation" destination="uNR-FC-R1f" id="T7A-VE-KxV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="118"/>
+            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
         </scene>
     </scenes>
     <resources>
-        <image name="bitcoinsign.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="bitcoinsign.circle.fill" catalog="system" width="32" height="32"/>
         <namedColor name="Background Color">
             <color red="0.50599998235702515" green="0.92500001192092896" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
